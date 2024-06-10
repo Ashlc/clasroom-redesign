@@ -6,13 +6,20 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+    colors: {
+      primary: 'var(--primary)',
+      'primary-hover': 'var(--primary-hover)',
+      secondary: 'var(--secondary)',
+      'secondary-hover': 'var(--secondary-hover)',
+      'text-on-primary': 'var(--text-on-primary)',
+      'text-on-secondary': 'var(--text-on-secondary)',
+      text: 'var(--text)',
+      gray: {
+        100: 'var(--gray-100)',
+        200: 'var(--gray-200)',
+      }
     },
   },
   plugins: [],

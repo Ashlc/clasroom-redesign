@@ -3,7 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
+  --primary: #0F9D58;
+  --primary-hover: #57BB8A;
+  --text-on-primary: #fff;
+  --secondary: #B5B6B7;
+  --secondary-hover: #5F6368;
+  --text-on-secondary: #fff;
+  --gray-100: #B5B6B7;
+  --gray-200: #A1A1A1;
+  --base: #fff;
+  --text: #1E1E1E;
+    --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
@@ -16,14 +26,22 @@
   }
 }
 
+.dark {
+  --primary: #0F9D58;
+  --hover-primary: #57BB8A;
+  --text-on-primary: #fff;
+  --secondary: #5F6368;
+  --secondary-hover: #B5B6B7;
+  --text-on-secondary: #fff;
+  --gray-100: #B5B6B7;
+  --gray-200: #A1A1A1;
+  --base: #212324;
+  --text: #fff;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--text);
+  background: var(--base);
 }
 
 @layer utilities {
