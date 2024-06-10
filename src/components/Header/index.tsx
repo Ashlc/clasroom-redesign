@@ -1,12 +1,14 @@
-"use client"
+'use client';
 
-import { Menu } from "@mui/icons-material"
-import { Drawer, IconButton } from "@mui/material"
-import Image from "next/image"
-import { useState } from "react"
-import ThemeSwitcher from "../ThemeSwitcher"
+import { Menu } from '@mui/icons-material';
+import { Drawer, IconButton } from '@mui/material';
+import sidebarItems from '@utils/SidebarItems';
+import Image from 'next/image';
+import { useState } from 'react';
+import SidebarItem from '../SidebarItem';
+import ThemeSwitcher from '../ThemeSwitcher';
 
-type Props = {}
+type Props = {};
 
 const Index = (props: Props) => {
   const [drawerVisible, setDrawerVisible] = useState(false);
@@ -15,8 +17,9 @@ const Index = (props: Props) => {
       <div className="flex flex-row gap-4 items-center">
         <IconButton
           aria-label="Menu"
-          onClick={() => setDrawerVisible(!drawerVisible)}>
-          <Menu/>
+          onClick={() => setDrawerVisible(!drawerVisible)}
+        >
+          <Menu />
         </IconButton>
         <Image src="/logo.svg" alt="Logo" height={36} width={36} />
         <p className="font-semibold text-lg">Classroom</p>
@@ -27,12 +30,19 @@ const Index = (props: Props) => {
         open={drawerVisible}
         onClose={() => setDrawerVisible(false)}
       >
-        <div className="w-64 h-full bg-gray-100">
-          <p>Drawer</p>
+        <div className="py-10 w-[300px]">
+          {sidebarItems.map((item, index) => (
+            <SidebarItem
+              key={item.title + index}
+              title={item.title}
+              path={item.path}
+              icon={item.icon}
+            />
+          ))}
         </div>
       </Drawer>
     </div>
-  )
-}
+  );
+};
 
 export default Index;
