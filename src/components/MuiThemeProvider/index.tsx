@@ -15,7 +15,7 @@ function Index({children}: Props) {
     }, 
 }); 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} >
         <CssBaseline /> 
         {children}
     </ThemeProvider>

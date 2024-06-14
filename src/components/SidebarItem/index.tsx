@@ -18,9 +18,11 @@ const defaultProps: Props = {
 
 const Index = (props: Props) => {
   return (
-    <div className="h-[40px] border border-red-500 w-full flex flex-row gap-4 items-center">
+    <div className="h-[60px] w-full px-4
+    flex flex-row gap-4 hover:bg-secondary
+    transition-all items-center select-none">
       {props.icon}
-      <p className="text-primary">{props.title}</p>
+      <p>{props.title}</p>
     </div>
   );
 };

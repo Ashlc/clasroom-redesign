@@ -3,10 +3,14 @@
 import { Menu } from '@mui/icons-material';
 import { Drawer, IconButton } from '@mui/material';
 import sidebarItems from '@utils/SidebarItems';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useState } from 'react';
 import SidebarItem from '../SidebarItem';
-import ThemeSwitcher from '../ThemeSwitcher';
+
+const ThemeSwitcher = dynamic(() => import('../ThemeSwitcher'), {
+  ssr: false,
+});
 
 type Props = {};
 
