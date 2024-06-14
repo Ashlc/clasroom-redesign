@@ -1,7 +1,24 @@
+import Column from '@components/Column';
+import PostCard from '@components/PostCard';
+import Row from '@components/Row';
+import { Dashboard } from '@mui/icons-material';
+
 export default function Home() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <Column className="px-6 py-6" align="start" gap={10}>
+      <Row>
+        <Dashboard className="text-primary" />
+        <p className="text-text">Dashboard</p>
+      </Row>
+      <Column>
+        <PostCard
+          origin="Artificial Intelligence"
+          author="Professor Smith"
+          date={new Date(Date.now())}
+        >
+          <p>Test</p>
+        </PostCard>
+      </Column>
+    </Column>
   );
 }
