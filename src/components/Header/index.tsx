@@ -1,7 +1,8 @@
 'use client';
 
-import { Menu } from '@mui/icons-material';
-import { Drawer, IconButton } from '@mui/material';
+import PlaceholderPfp from '@assets/pfp.png';
+import { LocalLibrary, Menu } from '@mui/icons-material';
+import { Divider, Drawer, IconButton } from '@mui/material';
 import sidebarItems from '@utils/SidebarItems';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -34,7 +35,21 @@ const Index = (props: Props) => {
         open={drawerVisible}
         onClose={() => setDrawerVisible(false)}
       >
-        <div className="py-10 w-[300px]">
+        <div className="w-[300px]">
+          <div className="flex flex-row items-center h-[80px] gap-4 px-4">
+            <Image
+              src={PlaceholderPfp}
+              alt="Profile Picture"
+              height={40}
+              width={40}
+              className="rounded-full"
+            />
+            <div className="flex flex-col">
+              <p className="font-bold">User</p>
+              <p className="text-sm">user@email.com</p>
+            </div>
+          </div>
+          <Divider />
           {sidebarItems.map((item, index) => (
             <SidebarItem
               key={item.title + index}
@@ -43,6 +58,8 @@ const Index = (props: Props) => {
               icon={item.icon}
             />
           ))}
+          <Divider />
+          <SidebarItem title="Courses" path="." icon={<LocalLibrary />} />
         </div>
       </Drawer>
     </div>
