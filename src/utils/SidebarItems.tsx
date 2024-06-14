@@ -15,12 +15,7 @@ const sidebarItems = [
     title: 'Bookmarks',
     path: '/bookmarks',
     icon: <Bookmark />,
-  },
-  {
-    title: 'Classes',
-    path: '/classes',
-    icon: <School />,
-  },
+  }
 ];
 
 export default sidebarItems;
