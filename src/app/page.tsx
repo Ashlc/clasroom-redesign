@@ -6,7 +6,7 @@ import { Dashboard } from '@mui/icons-material';
 export default function Home() {
   return (
     <Column className="px-6 py-6" align="start" gap={10}>
-      <Row>
+      <Row className="mb-6">
         <Dashboard className="text-primary" />
         <p className="text-text">Dashboard</p>
       </Row>
@@ -16,7 +16,7 @@ export default function Home() {
           author="Professor Smith"
           date={new Date(Date.now())}
         >
-          <p>Test</p>
+          <p>This is a classroom post.</p>
         </PostCard>
       </Column>
     </Column>
